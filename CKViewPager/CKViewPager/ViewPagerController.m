@@ -133,7 +133,7 @@ static const BOOL kFixLatterTabsPositions = NO;
 {
 
     CGFloat topLayoutGuide = 0.0;
-    if (IOS_VERSION_8) {
+    if (IOS_VERSION_8 && self.navigationController.navigationBar.translucent) {
         topLayoutGuide = UIApplication.sharedApplication.statusBarHidden ? 0.0f : 20.0f;
         if (self.navigationController && !self.navigationController.navigationBarHidden) {
             topLayoutGuide += self.navigationController.navigationBar.frame.size.height;
