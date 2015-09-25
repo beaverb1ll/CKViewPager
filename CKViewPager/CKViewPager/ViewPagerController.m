@@ -479,7 +479,7 @@ static const BOOL kFixLatterTabsPositions = NO;
     // Set self as new delegate
     ((UIScrollView *) self.pageViewController.view.subviews[0]).delegate = self;
 
-    self.pageViewController.dataSource = self;
+//    self.pageViewController.dataSource = self;
     self.pageViewController.delegate = self;
 
     self.animatingToTab = NO;
