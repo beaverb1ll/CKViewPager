@@ -616,7 +616,7 @@ static const BOOL kFixLatterTabsPositions = NO;
         index = [_delegate selectTabOnReloadForViewPager:self];
     }
     
-    if (index > self.tabCount) {
+    if (index >= self.tabCount) {
         index = 0;
     }
     
