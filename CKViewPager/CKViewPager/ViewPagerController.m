@@ -694,25 +694,6 @@ static const BOOL kFixLatterTabsPositions = NO;
 }
 
 
-#pragma mark - UIPageViewControllerDataSource
-
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    NSUInteger index = [self indexForViewController:viewController];
-    index++;
-    return [self viewControllerAtIndex:index];
-}
-
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    NSUInteger index = [self indexForViewController:viewController];
-    index--;
-    return [self viewControllerAtIndex:index];
-}
-
-
 #pragma mark - UIPageViewControllerDelegate
 
 
