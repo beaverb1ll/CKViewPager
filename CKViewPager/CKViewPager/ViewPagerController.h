@@ -202,4 +202,8 @@ typedef NS_ENUM(NSUInteger, ViewPagerIndicator) {
 */
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index fromIndex:(NSUInteger)previousIndex didSwipe:(BOOL)didSwipe;
 
+/**
+ * delegate object must implement this method if wants to select tab on reload
+ */
+- (NSUInteger)selectTabOnReloadForViewPager:(ViewPagerController *)viewPager;
 @end

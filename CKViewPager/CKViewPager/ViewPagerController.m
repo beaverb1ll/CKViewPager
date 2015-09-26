@@ -612,6 +612,10 @@ static const BOOL kFixLatterTabsPositions = NO;
 
     // Select starting tab
     NSUInteger index = self.startFromSecondTab ? 1 : 0;
+    if (_delegate && [_delegate respondsToSelector:@selector(selectTabOnReloadForViewPager:)]) {
+        index = [_delegate selectTabOnReloadForViewPager:self];
+    }
+    
     [self selectTabAtIndex:index didSwipe:YES];
 
     CGRect rect = [self tabViewAtIndex:self.activeContentIndex].frame;
