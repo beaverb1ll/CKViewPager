@@ -49,7 +49,7 @@ static const BOOL kFixLatterTabsPositions = NO;
 
 #pragma mark - ViewPagerController
 
-@interface ViewPagerController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
+@interface ViewPagerController () <UIPageViewControllerDelegate, UIScrollViewDelegate>
 
 // Tab and content stuff
 @property UIScrollView *tabsView;
@@ -614,6 +614,10 @@ static const BOOL kFixLatterTabsPositions = NO;
     NSUInteger index = self.startFromSecondTab ? 1 : 0;
     if (_delegate && [_delegate respondsToSelector:@selector(selectTabOnReloadForViewPager:)]) {
         index = [_delegate selectTabOnReloadForViewPager:self];
+    }
+    
+    if (index > self.tabCount) {
+        index = 0;
     }
     
     [self selectTabAtIndex:index didSwipe:YES];
